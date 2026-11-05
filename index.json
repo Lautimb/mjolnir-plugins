@@ -1,4 +1,168 @@
 {
   "schema": 1,
-  "plugins": []
+  "plugins": [
+    {
+      "id": "azure-devops",
+      "version": "0.1.0",
+      "sha256": "36ffef853c2dc9f6eb7b2199c90375c99bfaa363da5a29f9a3968acc9db4d647",
+      "url": "https://github.com/Lautimb/mjolnir/releases/download/v0.2.0/azure-devops-0.1.0.mjp",
+      "size": 5021,
+      "manifest": {
+        "id": "azure-devops",
+        "version": "0.1.0",
+        "engines": {
+          "mjolnir": ">=0.1.0",
+          "api": 1
+        },
+        "name": "Azure DevOps",
+        "description": "%description%",
+        "locales": {
+          "es": "locales/es.json",
+          "en": "locales/en.json"
+        },
+        "background": "background.html",
+        "contributes": {
+          "providers": [
+            {
+              "id": "azure-devops",
+              "displayName": "Azure DevOps",
+              "defaultHost": "dev.azure.com",
+              "remotes": [
+                {
+                  "host": "dev.azure.com",
+                  "path": "{org}/{project}/_git/{repo}",
+                  "repo": {
+                    "owner": "{org}/{project}",
+                    "name": "{repo}"
+                  }
+                },
+                {
+                  "host": "ssh.dev.azure.com",
+                  "path": "v3/{org}/{project}/{repo}",
+                  "repo": {
+                    "host": "dev.azure.com",
+                    "owner": "{org}/{project}",
+                    "name": "{repo}"
+                  }
+                },
+                {
+                  "host": "{org}.visualstudio.com",
+                  "path": "{project}/_git/{repo}",
+                  "repo": {
+                    "host": "dev.azure.com",
+                    "owner": "{org}/{project}",
+                    "name": "{repo}"
+                  }
+                },
+                {
+                  "host": "{org}.visualstudio.com",
+                  "path": "DefaultCollection/{project}/_git/{repo}",
+                  "repo": {
+                    "host": "dev.azure.com",
+                    "owner": "{org}/{project}",
+                    "name": "{repo}"
+                  }
+                },
+                {
+                  "host": "vs-ssh.visualstudio.com",
+                  "path": "v3/{org}/{project}/{repo}",
+                  "repo": {
+                    "host": "dev.azure.com",
+                    "owner": "{org}/{project}",
+                    "name": "{repo}"
+                  }
+                }
+              ],
+              "auth": {
+                "token": true,
+                "cli": {
+                  "command": "az",
+                  "args": [
+                    "account",
+                    "get-access-token",
+                    "--resource",
+                    "499b84ac-1321-427f-aa17-267ca6975798",
+                    "--query",
+                    "accessToken",
+                    "-o",
+                    "tsv"
+                  ]
+                }
+              },
+              "pulls": {
+                "refspec": "refs/pull/{number}/merge"
+              }
+            }
+          ]
+        },
+        "permissions": {
+          "network": [
+            "https://dev.azure.com",
+            "https://app.vssps.visualstudio.com"
+          ]
+        }
+      },
+      "strings": {
+        "es": {
+          "description": "Cuentas y pull requests de Azure Repos. Usá un PAT creado para todas las organizaciones, o la CLI de Azure (az login)."
+        },
+        "en": {
+          "description": "Azure Repos accounts and pull requests. Use a PAT created for all organizations, or the Azure CLI (az login)."
+        }
+      },
+      "signature": "a1RoIEs25g6ojfFntxdmmA4/jNl7p8eJhZhChqal9lWpub05KtQgoBNiUh5etL2c+9BJ+jzLoe3QLSfsRvN9AA=="
+    },
+    {
+      "id": "http-client",
+      "version": "0.1.0",
+      "sha256": "db80d55db06fc17cbebf1f1d6950ebc32adb393a1a97d7adfc6c35a3077c23d5",
+      "url": "https://github.com/Lautimb/mjolnir/releases/download/v0.2.0/http-client-0.1.0.mjp",
+      "size": 81147,
+      "manifest": {
+        "id": "http-client",
+        "version": "0.1.0",
+        "engines": {
+          "mjolnir": ">=0.1.0",
+          "api": 1
+        },
+        "name": "%name%",
+        "description": "%description%",
+        "locales": {
+          "es": "locales/es.json",
+          "en": "locales/en.json"
+        },
+        "contributes": {
+          "views": [
+            {
+              "id": "main",
+              "title": "%view%",
+              "icon": "icons/http.svg",
+              "entry": "index.html"
+            }
+          ]
+        },
+        "permissions": {
+          "network": [
+            "*"
+          ],
+          "repoFiles": [
+            ".mjolnir/http/**"
+          ]
+        }
+      },
+      "strings": {
+        "es": {
+          "name": "Cliente HTTP",
+          "description": "Probá APIs desde Mjolnir, con colecciones por repo, entornos e historial.",
+          "view": "Cliente HTTP"
+        },
+        "en": {
+          "name": "HTTP client",
+          "description": "Try APIs from Mjolnir, with per-repo collections, environments and history.",
+          "view": "HTTP client"
+        }
+      },
+      "signature": "pmUIlHsRrH9FJGlmLj0FL3+/tZ9oJgEC10wavaA/sl4tskI7qCGyhg27k2LvzO9eemjAdup2/DBPP4wGjn0cAw=="
+    }
+  ]
 }
