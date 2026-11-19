@@ -3,15 +3,15 @@
   "plugins": [
     {
       "id": "azure-devops",
-      "version": "0.1.0",
-      "sha256": "36ffef853c2dc9f6eb7b2199c90375c99bfaa363da5a29f9a3968acc9db4d647",
-      "url": "https://github.com/Lautimb/mjolnir/releases/download/v0.2.0/azure-devops-0.1.0.mjp",
-      "size": 5021,
+      "version": "0.3.0",
+      "sha256": "fbc881442b64741e4d09a3e9f6d445c67c98fa768af15068550261037511ccd3",
+      "url": "https://github.com/Lautimb/mjolnir/releases/download/v0.3.0/azure-devops-0.3.0.mjp",
+      "size": 85964,
       "manifest": {
         "id": "azure-devops",
-        "version": "0.1.0",
+        "version": "0.3.0",
         "engines": {
-          "mjolnir": ">=0.1.0",
+          "mjolnir": ">=0.3.0",
           "api": 1
         },
         "name": "Azure DevOps",
@@ -22,6 +22,14 @@
         },
         "background": "background.html",
         "contributes": {
+          "views": [
+            {
+              "id": "boards",
+              "title": "%boards%",
+              "icon": "icons/boards.svg",
+              "entry": "boards.html"
+            }
+          ],
           "providers": [
             {
               "id": "azure-devops",
@@ -90,7 +98,12 @@
                 }
               },
               "pulls": {
-                "refspec": "refs/pull/{number}/merge"
+                "refspec": "refs/pull/{number}/merge",
+                "features": [
+                  "review",
+                  "merge",
+                  "inlineComments"
+                ]
               }
             }
           ]
@@ -99,25 +112,28 @@
           "network": [
             "https://dev.azure.com",
             "https://app.vssps.visualstudio.com"
-          ]
+          ],
+          "workspace": "read"
         }
       },
       "strings": {
         "es": {
-          "description": "Cuentas y pull requests de Azure Repos. Usá un PAT creado para todas las organizaciones, o la CLI de Azure (az login)."
+          "description": "Cuentas, pull requests y tableros de Azure DevOps. Usá un PAT creado para todas las organizaciones, o la CLI de Azure (az login).",
+          "boards": "Boards"
         },
         "en": {
-          "description": "Azure Repos accounts and pull requests. Use a PAT created for all organizations, or the Azure CLI (az login)."
+          "description": "Azure DevOps accounts, pull requests and boards. Use a PAT created for all organizations, or the Azure CLI (az login).",
+          "boards": "Boards"
         }
       },
-      "signature": "a1RoIEs25g6ojfFntxdmmA4/jNl7p8eJhZhChqal9lWpub05KtQgoBNiUh5etL2c+9BJ+jzLoe3QLSfsRvN9AA=="
+      "signature": "uqHO/nPXdbsxSR0mAfSSND3RnsaWmVlubxzT/8JGQB0q7upxY2NFVa3cRtkch3BSjsE0vbmJ6hS792iZhSz4Bw=="
     },
     {
       "id": "http-client",
       "version": "0.1.0",
-      "sha256": "db80d55db06fc17cbebf1f1d6950ebc32adb393a1a97d7adfc6c35a3077c23d5",
-      "url": "https://github.com/Lautimb/mjolnir/releases/download/v0.2.0/http-client-0.1.0.mjp",
-      "size": 81147,
+      "sha256": "93dc178210aa9929196fff3765da486060b05474a5215cc8f931c4663e65a457",
+      "url": "https://github.com/Lautimb/mjolnir/releases/download/v0.3.0/http-client-0.1.0.mjp",
+      "size": 81200,
       "manifest": {
         "id": "http-client",
         "version": "0.1.0",
@@ -162,7 +178,7 @@
           "view": "HTTP client"
         }
       },
-      "signature": "pmUIlHsRrH9FJGlmLj0FL3+/tZ9oJgEC10wavaA/sl4tskI7qCGyhg27k2LvzO9eemjAdup2/DBPP4wGjn0cAw=="
+      "signature": "OARgPhwIaABgu2I0UH+VRP3M17HK8X1j0a/Ztu5i46p9eQd8U6guO/XWU02jd9ziKCFyBQfZGwE70peaWBJNDg=="
     }
   ]
 }
