@@ -5,7 +5,7 @@
       "id": "azure-devops",
       "version": "0.3.0",
       "sha256": "fbc881442b64741e4d09a3e9f6d445c67c98fa768af15068550261037511ccd3",
-      "url": "https://github.com/Lautimb/mjolnir/releases/download/v0.3.0/azure-devops-0.3.0.mjp",
+      "url": "https://github.com/Lautimb/mjolnir/releases/download/v0.4.1/azure-devops-0.3.0.mjp",
       "size": 85964,
       "manifest": {
         "id": "azure-devops",
@@ -132,7 +132,7 @@
       "id": "http-client",
       "version": "0.1.0",
       "sha256": "93dc178210aa9929196fff3765da486060b05474a5215cc8f931c4663e65a457",
-      "url": "https://github.com/Lautimb/mjolnir/releases/download/v0.3.0/http-client-0.1.0.mjp",
+      "url": "https://github.com/Lautimb/mjolnir/releases/download/v0.4.1/http-client-0.1.0.mjp",
       "size": 81200,
       "manifest": {
         "id": "http-client",
